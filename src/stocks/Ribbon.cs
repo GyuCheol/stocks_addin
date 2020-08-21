@@ -27,6 +27,7 @@ namespace stocks
 
         private void Timer_Tick(object sender, EventArgs e)
         {
+            timer.Stop();
             RefreashTableTaskAsync();
         }
 
@@ -65,7 +66,6 @@ namespace stocks
                 return;
             }
 
-            timer.Stop();
             RefreashTableTaskAsync();
         }
 
