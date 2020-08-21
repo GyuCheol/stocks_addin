@@ -36,9 +36,9 @@
         {
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
-            this.button1 = this.Factory.CreateRibbonButton();
-            this.button2 = this.Factory.CreateRibbonButton();
             this.editBox1 = this.Factory.CreateRibbonEditBox();
+            this.button2 = this.Factory.CreateRibbonButton();
+            this.button1 = this.Factory.CreateRibbonButton();
             this.toggleButton1 = this.Factory.CreateRibbonToggleButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
@@ -60,11 +60,11 @@
             this.group1.Label = "Stocks";
             this.group1.Name = "group1";
             // 
-            // button1
+            // editBox1
             // 
-            this.button1.Label = "Create table";
-            this.button1.Name = "button1";
-            this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
+            this.editBox1.Label = "Timer";
+            this.editBox1.Name = "editBox1";
+            this.editBox1.Text = "1000";
             // 
             // button2
             // 
@@ -72,11 +72,11 @@
             this.button2.Name = "button2";
             this.button2.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button2_Click);
             // 
-            // editBox1
+            // button1
             // 
-            this.editBox1.Label = "Timer";
-            this.editBox1.Name = "editBox1";
-            this.editBox1.Text = "1000";
+            this.button1.Label = "Create table";
+            this.button1.Name = "button1";
+            this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
             // 
             // toggleButton1
             // 

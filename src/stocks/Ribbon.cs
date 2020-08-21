@@ -65,6 +65,7 @@ namespace stocks
                 return;
             }
 
+            timer.Stop();
             RefreashTableTaskAsync();
         }
 
@@ -145,6 +146,8 @@ namespace stocks
                 // 셀 값을 입력할 수 없는 타이밍이 때 걸린 경우.
                 Console.Write(ex.Message);
             }
+
+            toggleButton1_Click(null, null);
         }
 
         private void toggleButton1_Click(object sender, RibbonControlEventArgs e)
