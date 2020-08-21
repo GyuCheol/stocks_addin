@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30330.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stocks", "stocks\stocks.csproj", "{59D213B5-EA67-462F-8FB4-1B60205CFEE6}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YahooFinanceApi", "yahoo\YahooFinanceApi.csproj", "{3E474FBF-ABBE-4B05-BF66-87C387616A19}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YahooFinanceApi.Tests", "yahoo.tests\YahooFinanceApi.Tests.csproj", "{559078C9-DE66-4E24-AFA2-65B51EC97AC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{59D213B5-EA67-462F-8FB4-1B60205CFEE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59D213B5-EA67-462F-8FB4-1B60205CFEE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59D213B5-EA67-462F-8FB4-1B60205CFEE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E474FBF-ABBE-4B05-BF66-87C387616A19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E474FBF-ABBE-4B05-BF66-87C387616A19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E474FBF-ABBE-4B05-BF66-87C387616A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E474FBF-ABBE-4B05-BF66-87C387616A19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{559078C9-DE66-4E24-AFA2-65B51EC97AC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{559078C9-DE66-4E24-AFA2-65B51EC97AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{559078C9-DE66-4E24-AFA2-65B51EC97AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{559078C9-DE66-4E24-AFA2-65B51EC97AC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

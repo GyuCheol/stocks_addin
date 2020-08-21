@@ -123,21 +123,41 @@ namespace stocks
             {
                 foreach (ListObject table in tables)
                 {
+                    object[,] values = new object[table.ListRows.Count, table.ListColumns.Count];
+
                     // 시트에 정보 입력
                     for (int r = 2; r <= 1 + table.ListRows.Count; r++)
                     {
                         string ticker = table.Range[r, 1].Text;
 
-                        var data = securities[ticker];
+                        if (!securities.ContainsKey(ticker))
+                        {
+                            continue;
+                        }
 
+                        values[r - 2, 0] = ticker;
+
+                        Security data = securities[ticker];
+                        
                         for (int c = 2; c <= table.ListColumns.Count; c++)
                         {
-                            if (Enum.TryParse(table.Range[1, c].Text, out Field field))
+                            string key = table.Range[1, c].Text;
+
+                            if (Enum.TryParse(key, out Field field))
                             {
-                                table.Range[r, c].Value = data[field];
+                                if (data.Fields.ContainsKey(key))
+                                {
+                                    values[r - 2, c-1] = data[field];
+                                }
+                                else
+                                {
+                                    values[r - 2, c - 1] = "-";
+                                }
                             }
                         }
                     }
+
+                    table.DataBodyRange.Value = values;
                 }
             }
             catch (Exception ex)
