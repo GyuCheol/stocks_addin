@@ -45,7 +45,10 @@ namespace stocks
 
         private void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
-            RefreashTableTask();
+            if (toggleButton1.Checked)
+            {
+                RefreashTableTaskAsync().Wait();
+            }
         }
 
         private void button1_Click(object sender, RibbonControlEventArgs e)
@@ -82,12 +85,17 @@ namespace stocks
                 return;
             }
 
-            worker.RunWorkerAsync();
+            Task.Run(RefreashTableTaskAsync);
         }
 
-        public void RefreashTableTask()
+        public async Task RefreashTableTaskAsync()
         {
             Workbook wb = App.ActiveWorkbook;
+
+            if (wb == null)
+            {
+                return;
+            }
 
             try
             {
@@ -135,7 +143,7 @@ namespace stocks
                 }
 
                 // yahoo finance 정보 가져오기 (비동기)
-                var securities = Yahoo.Symbols(tickers.ToArray()).Fields(fields.ToArray()).QueryAsync().Result;
+                var securities = await Yahoo.Symbols(tickers.ToArray()).Fields(fields.ToArray()).QueryAsync();
             
                 foreach (ListObject table in tables)
                 {
